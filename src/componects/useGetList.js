@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
-export default function Index () {
+export default function useGetList () {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   var [Restaurants, setRestaurants] = useState([]);
@@ -24,12 +24,13 @@ useEffect(() => {
   return;
 }, [Restaurants.length]);
 
-function list(){
+function getAllList(){
   return Restaurants.map((rest) => {
     return(
       <div key={rest.restId}>
-        {rest.restId}
-        {rest.restName}
+        Name: {rest.restName}
+        Discription: {rest.restDiscription}
+        Rate: {rest.restRate}
       </div>
     )
   })
@@ -49,7 +50,7 @@ else {
   <div>
     <h1>All Restaurant Info:</h1>
  
-    {list()}
+    {getAllList()}
   </div>);
 }
 };

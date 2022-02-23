@@ -29,7 +29,7 @@ function getAllList(){
     return(
       <div key={rest.restId}>
         Name: {rest.restName}
-        Discription: {rest.restDiscription}
+        Description: {rest.restDescription}
         Rate: {rest.restRate}
       </div>
     )

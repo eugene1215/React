@@ -1,9 +1,10 @@
 // import Restaurants from '../src/componects/getAllRest';
 import React, { useEffect, useState } from 'react';
 import {  BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Index from "./componects/useGetList";
+import Index from "./Screen/Index";
 import Navbar from "./componects/navbar";
 import CreateRest from "./componects/useCreateRest"
+import { hot } from 'react-hot-loader/root';
 // process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
 
 
@@ -14,7 +15,7 @@ const App = () => {
       <Routes>
         <Route exact path="/" element={<Index />} />
         {/* <Route path="/edit/:id" element={<Edit />} /> */}
-        <Route path="/createRest" element={<CreateRest />} />
+        <Route path="/createFrom" element={<CreateRest />} />
       </Routes>
     </div>
   );
@@ -28,4 +29,4 @@ const App = () => {
   );
 };
   
- export default AppWrapper;
+ export default hot(AppWrapper);

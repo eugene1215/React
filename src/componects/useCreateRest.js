@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-
+import StyleSheet from "../Style/Style.css"
 
 export default function CreateRest(){
     const [form, setForm] = useState({
         restName:"",
         restId:"",
         restDescription:"",
-        restRate: "",
+        restRate: 10,
 
     });
     const navigate = useNavigate();
@@ -17,8 +17,10 @@ export default function CreateRest(){
         });
       }
     async function onSubmit(e){
-        e.preventDefault();
-
+      e.preventDefault();
+        
+        // console.log(e);
+        // genInt();
         const newRest = {...form};
 
         await fetch("http://127.0.0.1:8081/createRest", {
@@ -33,16 +35,32 @@ export default function CreateRest(){
             return;
         });
 
-        setForm({ restId: "", restName: "", restDescription: "", restRate: ""});
+        setForm({restId: {}, restName: {}, restDescription: {}, restRate: {}});
         navigate("/");
     } 
+
+    // function genInt(){
+    //   updateForm({restId : Math.floor(Math.random() * 1000000)+1})
+    // }
     return (
         <div>
           <h3>Create New Record</h3>
-          <form onSubmit={onSubmit()}>
-            <div className="form-group">
-              <label htmlFor="restName">restName</label>
+          <form onSubmit={onSubmit.bind()}>
+          {/* <div className="form-group">
+              <label htmlFor="restId">Restaurant Id</label>
               <input
+                
+                type="text"
+                className="form-control"
+                id="restId"
+                value={form.restId}
+                onChange={(e) => {updateForm({ restId: e.target.value })}}
+              />
+            </div> */}
+            <div className="form-group">
+              <label htmlFor="restName">Restaurant Name</label>
+              <input
+              width={StyleSheet.width}
                 type="text"
                 className="form-control"
                 id="restName"
@@ -51,7 +69,7 @@ export default function CreateRest(){
               />
             </div>
             <div className="form-group">
-              <label htmlFor="restDescription">restDescription</label>
+              <label htmlFor="restDescription">Restaurant Description</label>
               <input
                 type="text"
                 className="form-control"
@@ -60,44 +78,6 @@ export default function CreateRest(){
                 onChange={(e) => updateForm({ restDescription: e.target.value })}
               />
             </div>
-            {/* <div className="form-group">
-              <div className="form-check form-check-inline">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="positionOptions"
-                  id="positionIntern"
-                  value="Intern"
-                  checked={form.level === "Intern"}
-                  onChange={(e) => updateForm({ level: e.target.value })}
-                />
-                <label htmlFor="positionIntern" className="form-check-label">Intern</label>
-              </div>
-              <div className="form-check form-check-inline">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="positionOptions"
-                  id="positionJunior"
-                  value="Junior"
-                  checked={form.level === "Junior"}
-                  onChange={(e) => updateForm({ level: e.target.value })}
-                />
-                <label htmlFor="positionJunior" className="form-check-label">Junior</label>
-              </div>
-              <div className="form-check form-check-inline">
-                <input
-                  className="form-check-input"
-                  type="radio"
-                  name="positionOptions"
-                  id="positionSenior"
-                  value="Senior"
-                  checked={form.level === "Senior"}
-                  onChange={(e) => updateForm({ level: e.target.value })}
-                />
-                <label htmlFor="positionSenior" className="form-check-label">Senior</label>
-              </div>
-            </div> */}
             <div className="form-group">
               <input
                 type="submit"

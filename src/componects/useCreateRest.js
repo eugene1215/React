@@ -5,9 +5,8 @@ import StyleSheet from "../Style/Style.css"
 export default function CreateRest(){
     const [form, setForm] = useState({
         restName:"",
-        restId:"",
         restDescription:"",
-        restRate: 10,
+        restRate: 0,
 
     });
     const navigate = useNavigate();
@@ -19,8 +18,6 @@ export default function CreateRest(){
     async function onSubmit(e){
       e.preventDefault();
         
-        // console.log(e);
-        // genInt();
         const newRest = {...form};
 
         await fetch("http://127.0.0.1:8081/createRest", {
@@ -35,28 +32,14 @@ export default function CreateRest(){
             return;
         });
 
-        setForm({restId: {}, restName: {}, restDescription: {}, restRate: {}});
+        setForm({ restName: {}, restDescription: {}, restRate: {}});
         navigate("/");
     } 
 
-    // function genInt(){
-    //   updateForm({restId : Math.floor(Math.random() * 1000000)+1})
-    // }
     return (
-        <div>
+        <div className="body">
           <h3>Create New Record</h3>
           <form onSubmit={onSubmit.bind()}>
-          {/* <div className="form-group">
-              <label htmlFor="restId">Restaurant Id</label>
-              <input
-                
-                type="text"
-                className="form-control"
-                id="restId"
-                value={form.restId}
-                onChange={(e) => {updateForm({ restId: e.target.value })}}
-              />
-            </div> */}
             <div className="form-group">
               <label htmlFor="restName">Restaurant Name</label>
               <input
@@ -76,6 +59,17 @@ export default function CreateRest(){
                 id="restDescription"
                 value={form.restDescription}
                 onChange={(e) => updateForm({ restDescription: e.target.value })}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="restRate">Restaurant Rate</label>
+              <input
+              width={StyleSheet.width}
+                type="text"
+                className="form-control"
+                id="restRate"
+                value={form.restRate}
+                onChange={(e) => updateForm({ restRate: e.target.value })}
               />
             </div>
             <div className="form-group">

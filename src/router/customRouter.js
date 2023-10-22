@@ -13,6 +13,11 @@ import Foodie from "../pages/Foodie";
 
 const routers = createBrowserRouter([
   {
+    path: "/",
+    element: <Home />,
+    errorElement: <Page404 />,
+  },
+  {
     path: "/home",
     element: <Home />,
     errorElement: <Page404 />,

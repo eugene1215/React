@@ -3,6 +3,7 @@
 }
 
 .App-logo {
+  animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
   pointer-events: none;
 }
@@ -36,9 +37,50 @@
     transform: rotate(360deg);
   }
 }
+.body{
+  background-color: rgb(143, 0, 143);
+}
 .pageLayout {
   margin-top: 1%;
+  height: auto;
+  display: block;
+  background-color: #fff!important;
+  
 }
 .cardLayout {
   margin-top: 1%;
+  margin-bottom: 1%;
+  box-shadow: 10px 10px 5px lightblue;
 }
+
+.bodytext{
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family:"Lucida Console", "Courier New", monospace;
+}
+
+.cardH{
+  display: grid;
+  height: 400px;
+  align-content: center;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  background-color: #2196F3;
+  padding: 10px;
+}
+.cardList{
+  display: inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /* background-color: #333333; */
+}
+.aboutme{
+  margin: auto;
+  width: 40%;
+  border: 2px solid gray;
+  padding: 50px;
+}
+

@@ -8,11 +8,53 @@ import CustomNavbar from "./component/Navbar/CustomNavbar";
 import routers from "./router/customRouter";
 import Loader from "./component/Loader/Loader";
 // import * as serviceWorker from './serviceWorker';
+// var nodemailer = require('nodemailer');
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const isLoading = true;
 
 
+// function sendMail(){
+//   // const recipient = 'tempgene0@gmail.com';
+//   // const subject = document.getElementById("senderSubject").value ;
+//   // const body = document.getElementById("mailBody").value ;
+
+
+//   var transporter = nodemailer.createTransport({
+//     service: 'gmail',
+//     auth: {
+//       user: 'youremail@gmail.com',
+//       pass: 'yourpassword'
+//     }
+//   });
+  
+//   var mailOptions = {
+//     from: 'youremail@gmail.com',
+//     to: 'myfriend@yahoo.com',
+//     subject: 'Sending Email using Node.js',
+//     text: 'That was easy!'
+//   };
+  
+//   transporter.sendMail(mailOptions, function(error, info){
+//     if (error) {
+//       console.log(error);
+//     } else {
+//       console.log('Email sent: ' + info.response);
+//     }
+//   });
+
+//   // const mailtoLink = `mailto:${recipient}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+// // window.location.href = mailtoLink;
+
+// }
+
+
+
+
+// var results = document.getElementById("activity_level").value + "</br>" +
+//               document.getElementById("target_bodyfat_pct").value + 
+//               document.getElementById("tw").value + "</br>";
 
 // export default function index(){
 
@@ -35,7 +77,7 @@ const isLoading = true;
       ) : ( */}
         <>
           <React.StrictMode>
-            <CustomNavbar />
+            {/* <CustomNavbar /> */}
             <RouterProvider router={routers} />
             <App />
           </React.StrictMode>

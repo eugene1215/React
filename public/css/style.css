@@ -366,7 +366,7 @@ figure figcaption {
 #colorlib-hero .flexslider .slider-text > .slider-text-inner h2 {
   margin: 0;
   padding: 0;
-  color: black;
+  color: white;
   font-family: "Playfair Display", Georgia, serif;
 }
 #colorlib-hero .flexslider .slider-text > .slider-text-inner h1 {
@@ -414,14 +414,14 @@ figure figcaption {
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 2px;
-  color: #000;
+  color: white;
   padding: 10px 15px !important;
   border: none;
   font-weight: 400;
 }
 #colorlib-hero .flexslider .slider-text > .slider-text-inner .btn.btn-learn {
-  color: #000;
-  border: 1px solid #000;
+  color: white;
+  border: 1px solid white;
   background: transparent !important;
 }
 #colorlib-hero
@@ -1041,7 +1041,7 @@ body.offcanvas .colorlib-nav-toggle {
   text-align: left;
   width: 100%;
   float: left;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   position: relative;
 }
 .colorlib-feature .colorlib-icon {
@@ -1827,4 +1827,21 @@ body.offcanvas .colorlib-nav-toggle {
 
 .js .animate-box {
   opacity: 0;
+}
+
+.iconOutter{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  display: table;
+  text-align: center;
+  padding: 20px;
+}
+
+.icon99{
+	width: 50px;
+	height: 50px;
+
 }
